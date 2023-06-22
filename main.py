@@ -1,10 +1,16 @@
 import logging
 from aiogram import Bot, Dispatcher, executor, types
 from googletrans import Translator
+from environs import Env
+
+
+# Environmental variables
+env = Env() 
+env.read_env() 
 
 translator = Translator()
 
-API_TOKEN = '6103115776:AAGG0N35a-3Xj-PVj2qoKxr2kzIu05TZho0'
+API_TOKEN = env.str('API_TOKEN')
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
